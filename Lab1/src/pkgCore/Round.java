@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class Round {
 
 	private final int ComeOutScore;
-	private eGameResult eGameResult;
-	private int rollCount = 1;
+	private eGameResult eGameResult; //The enumerations could have been used incorrectly (This value is not used).
+	private int rollCount = 1; //Replaced the linked list with a count for simplicity.
 	private int craps[] = {2, 3, 12};
 	private int natural[] = {7, 11};
 
@@ -17,7 +17,7 @@ public class Round {
 		ComeOutScore = comeOut.getScore();
 
 		while(!roundOver(currentRoll)) {
-			rollCount++;
+			rollCount++; //Counts the number of rolls
 			newRoll = new Roll();
 			currentRoll = newRoll.getScore();
 		}
@@ -35,7 +35,7 @@ public class Round {
 				eGameResult = pkgCore.eGameResult.NATURAL;
 				break;
 			}
-		} else {
+		} else { //The round did not end with the come out roll
 			if(currentRoll == 7) {
 				eGameResult = pkgCore.eGameResult.SEVEN_OUT;
 			} else {
