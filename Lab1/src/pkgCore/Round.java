@@ -9,6 +9,8 @@ public class Round {
 	private int rollCount = 1; //Replaced the linked list with a count for simplicity.
 	private int craps[] = {2, 3, 12};
 	private int natural[] = {7, 11};
+	// we also could have used a LinkedList for keeping track of the rolls.
+	// LinkedList maintains the order that new entries are added, useful for a game like this.
 
 	public Round() {
 		Roll comeOut = new Roll();
